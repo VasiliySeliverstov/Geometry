@@ -5,17 +5,24 @@
 #include <vector>
 using namespace std;
 
+const float PI = 3.14159265;
+
 class Circle{
+public:
     int x, y;
     float radius;
-public:
+    vector<int> intersects;
     Circle(int x = 0, int y = 0, float radius = 0): x(x), y(y), radius(radius)  {}
+    float getPerimetr() {return 2 * PI * radius;}
+    float getArea() {return PI * radius * radius;}
+
     void getdata()
     {
         cout << "x = " << x << endl;
         cout << "y = " << y << endl;
         cout << "radius = " << radius << endl;
     }
+
 };
 
 
@@ -38,11 +45,7 @@ Circle getdata(string toParse)
         
     Circle temp = Circle(x_coord, y_coord, radius);
     return temp;
-    
 }
-
-
-
 
 vector<Circle> parse()
 {
