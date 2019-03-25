@@ -1,3 +1,4 @@
-.zip
-.log
-.o
+*.zip
+*.log
+*.o
+*.txt
