@@ -1,5 +1,18 @@
-all: Geometry.o
+CC = g++
+EXECUTABLE = bin/main.out
+CFLAGS = -Wall -Werror -c -MD -Wno-sign-compare
+SOURCES = $(wildcard $(addprefix src/,*.cpp))
+OBJECTS = $(patsubst $(addprefix src/, %.cpp),$(addprefix build/, %.o),$(wildcard $(addprefix src/, *.cpp)))
+DEPENDENCIES = $(patsubst $(addprefix build/, %.o), $(addprefix build/, %.d), $(wildcard $(addprefix build/, *.o)))
 
+all : $(SOURCES) $(EXECUTABLE)
 
-Geometry.o: main.cpp
-	g++ -o Geometry.o -std=c++11 main.cpp
+$(EXECUTABLE) : $(OBJECTS)
+	$(CC) $^ -o $@ -std=c++11
+
+build/%.o : src/%.cpp
+	$(CC) $(CFLAGS) $< -o $@ -std=c++11
+
+.PHONY : clean
+clean:
+	rm -f $(OBJECTS) $(EXECUTABLE) $(DEPENDENCIES) 
