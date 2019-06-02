@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "iostream": "cpp"
+    },
+    "clang-format.executable": "/home/vasiliy/Рабочий стол/projects/Geometry/.clang-format"
+}
