@@ -4,7 +4,6 @@ script:
 - make
 - cd bin
   - ./main.out
-- git ls-files src/ | xargs clang-format -i && git diff --exit-code
 
 compiler: g++
 
