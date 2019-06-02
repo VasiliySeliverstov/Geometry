@@ -49,9 +49,6 @@ DerivePointerAlignment: false
 ExperimentalAutoDetectBinPacking: false
 FixNamespaceComments: false
 IncludeBlocks:   Preserve
-IndentCaseLabels: false
-IndentWidth:     4
-IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
