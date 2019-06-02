@@ -1,10 +1,9 @@
 language: C++
 
-
-
-
 script:
 - make
+- cd bin
+  - ./main.out
 
 compiler: g++
 
